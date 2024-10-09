@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App</title>
+</head>
+<body>
+    <div>
+        <label><input id="a" name="a" type="number" placeholder="Nhập a"></label>
+        <label><input id="b" name="b" type="number" placeholder="Nhập b"></label>
+    </div>
+    <div>
+        <button type="button" id="add">Addition (+)</button>
+        <button type="button" id="sub">Subtraction (-)</button>
+        <button type="button" id="mul">Multiplication (*)</button>
+        <button type="button" id="div">Division (*)</button>
+    </div>
+    <div id="result"></div>
+    <script>
+        function GetA() {return parseInt(document.getElementById("a").value)}
+        function GetB() {return parseInt(document.getElementById("b").value)}
+        function PrintResult(result) {
+            document.getElementById("result").innerHTML += result.toString()
+        }
+        function Addition() {
+            document.getElementById("result").innerHTML = "a + b = "
+            PrintResult(GetA() + GetB())
+        }
+        function Subtraction() {
+            document.getElementById("result").innerHTML = "a + b = "
+            PrintResult(GetA() - GetB())
+        }
+        function Multiplication() {
+            document.getElementById("result").innerHTML = "a + b = "
+            PrintResult(GetA() * GetB())
+        }
+        function Division() {
+            document.getElementById("result").innerHTML = "a + b = "
+            PrintResult(GetA() / GetB())
+        }
+        document.getElementById("add").addEventListener("click", Addition)
+        document.getElementById("sub").addEventListener("click", Subtraction)
+        document.getElementById("mul").addEventListener("click", Multiplication)
+        document.getElementById("div").addEventListener("click", Division)
+    </script>
+</body>
+</html>
